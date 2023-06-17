@@ -1,0 +1,64 @@
+.animation-container {
+    width: 100%;
+    height: calc(100vh - 64px); /* Adjust the height according to your navbar's height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* .image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  } */
+
+  .image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1); /* Initial scale value */
+    transition: opacity 1s ease-in-out, transform 2s ease-in-out; /* Multiple transition properties */
+  }
+  
+  .image-wrapper img:hover {
+    opacity: 1;
+    transform: scale(0.8); /* Final scale value on hover */
+  }
+  
+
+  .image-wrapper img.active {
+    opacity: 1;
+  }
+  
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+  }
+  

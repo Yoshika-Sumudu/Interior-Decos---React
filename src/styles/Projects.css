@@ -1,0 +1,187 @@
+.section {
+  padding: 2rem;
+  background-color: #000000;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slide-up 0.8s ease forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section.active {
+  transform: translateY(0);
+}
+
+.section-container {
+  display: flex;
+  align-items: center;
+}
+
+.section-image {
+  flex: 1;
+}
+
+.section-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.section-img:hover {
+  animation: zoomEffect 3s ease-in-out;
+}
+
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.section-text {
+  flex: 1;
+  padding: 1rem;
+  justify-content: center;
+  color: #f1f1f1;
+}
+
+.section-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.projects-section {
+  background-color: #000000;
+  color: #f1f1f1;
+  padding: 20px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover .project-image {
+  opacity: 0.9;
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-details {
+  text-align: center;
+  color: #fff;
+}
+
+.more-projects-button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f1f1f1;
+  color: #0c0432;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.more-projects-button:hover {
+  background-color: #f1f1f1;
+  color: #0c0432;
+}
+
+.wishlist-button,
+.cart-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+  z-index: 200;
+}
+
+.wishlist-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.wishlist-button .fa-heart {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.wishlist-button.active .fa-heart {
+  color: red;
+}
+
+.project-card:hover .wishlist-button i {
+  color: red;
+}
+
+.cart-button i {
+  color: white;
+}
+
+.project-card:hover .cart-button i {
+  color: white;
+}
+
+.view-button {
+  border-radius: 4px;
+}
